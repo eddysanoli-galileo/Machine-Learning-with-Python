@@ -8,15 +8,26 @@ from . import utils
 
 DEBUG = False
 
-GAMMA = 0.5  # discounted factor
-TRAINING_EP = 0.5  # epsilon-greedy parameter for training
-TESTING_EP = 0.05  # epsilon-greedy parameter for testing
+# ============================================== #
+# SETTINGS                                       #
+# ============================================== #
+
+GAMMA = 0.5                 # discounted factor
+
+# Epsilon
+TRAINING_EP = 0.5           # epsilon-greedy parameter for training
+TESTING_EP = 0.05           # epsilon-greedy parameter for testing
+
+# Runs, epochs and episodes
 NUM_RUNS = 10
 NUM_EPOCHS = 200
-NUM_EPIS_TRAIN = 25  # number of episodes for training at each epoch
-NUM_EPIS_TEST = 50  # number of episodes for testing
-ALPHA = 0.1  # learning rate for training
+NUM_EPIS_TRAIN = 25         # number of episodes for training at each epoch
+NUM_EPIS_TEST = 50          # number of episodes for testing
 
+# Learning rate
+ALPHA = 0.1                 # learning rate for training
+
+# Actions and object
 ACTIONS = framework.get_actions()
 OBJECTS = framework.get_objects()
 NUM_ACTIONS = len(ACTIONS)
@@ -117,9 +128,6 @@ def tabular_q_learning(
     Returns:
         None
     """
-    # Constants
-    ALPHA = 1           # Exponential running average constant
-    GAMMA = 0.5         # Discount factor
 
     # Shorter names for states and actions
     sr : int = current_state_1
